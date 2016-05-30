@@ -12,6 +12,8 @@ master.geometry("1000x500+0+0")
 master.config(bg= "white")
 master.title("Aplicativo de Simulacion Costos, Por Santiago Vélez Aristizabal")
 
+save1 = open('save1.txt', 'w+')
+
 "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
 
 #CREAMOS UN FRAME PARA CADA FASE, INCLUYENDO LAS FASES MEZCLADAS
@@ -117,6 +119,27 @@ def todos():
 	frmplncn.grid_remove()
 	frmtodos.grid()
 
+def guardar():
+	save1.seek(0.0)
+	sel = []
+	for i in range(36):
+		check = listachecks[i].get()
+		sel.append(check)
+	print(sel)
+	print(str(sel))
+	save1.write(str(sel))
+	save1.close()
+	master.destroy()
+	import Form4
+
+def marcartodas():
+	for i in range(36):
+		botones[i].select()
+
+def dmarcartodas():
+	for i in range(36):
+		botones[i].deselect()
+
 "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
 
 #variableS PARA LOS RADIOBUTTONS
@@ -176,6 +199,8 @@ t4 = IntVar()
 t5 = IntVar()
 t6 = IntVar()
 t7 = IntVar()
+
+listachecks = [p1,p2,p3,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,o1,o1,o3,o4,o5,o6,o7,o8,o9,a1,a2,a3,a4,oa1,oa2,t1,t2,t3,t4,t5,t6,t7]
 
 "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
 
@@ -339,6 +364,19 @@ chbtn6todos.place(x = 100, y= 270)
 
 chbtn7todos = Checkbutton(frmtodos, text = "Monitoreo y control (Plan de Seguimiento y Monitoreo)", background = 'white', onvalue = 1, offvalue =0,variable = t7)
 chbtn7todos.place(x = 100, y= 300)
+
+"//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
+
+btnslccnr = Button(master, text = "Seleccionar Impactos", command = guardar, width = 20)
+btnslccnr.place(x = 800, y = 400)
+
+mrcrtodas = Button(master, text = "Desmarcar Todas", command =dmarcartodas, width = 20)
+mrcrtodas.place(x = 800, y = 350)
+
+dmrcrtodas = Button(master, text = "Marcar Todas", command = marcartodas, width = 20)
+dmrcrtodas.place(x = 800, y = 300)
+
+
 
 
 "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"

@@ -1,5 +1,4 @@
-Primer Commit Nuevo Repositorio
+Commit - Segundo Formulario // 27/04/2016 
 
-26 de Mayo de 2016: 11:44 p.m.
-
-Se han añadido las sugerencias al Formulario #3, la matriz RActProy se ha creado, todo funcionando sin novedades.
+Commit - Tercer Formulario, 08/05/2016, aún con arreglos por aplicar a los radiobuttons, métodos gráficos e 
+		implementaciones en stand-by.

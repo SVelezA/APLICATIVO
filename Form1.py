@@ -18,7 +18,7 @@ transporte = DoubleVar()
 complejidad = ""
 
 def abrir():
-	os.startfile(r'C:\Users\Santiago\Desktop\Proyecto\Form2.py')
+	os.startfile(r'C:\Users\Santiago\Desktop\Proyecto\1.01\Form2.py')
 	master.destroy()
 
 def promedio():
